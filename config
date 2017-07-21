@@ -200,3 +200,5 @@ client.focused_inactive	#333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
 
 for_window [class=".*"] border pixel 10
 hide_edge_borders both
+
+exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/.i3/workspace-7.json'"
