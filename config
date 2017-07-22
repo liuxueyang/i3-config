@@ -58,7 +58,7 @@ floating_modifier Mod1
 bindsym $mod+Return exec /usr/bin/terminator
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run -fn 'Droid Sans Mono-20'
