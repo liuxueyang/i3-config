@@ -193,12 +193,9 @@ bar {
     tray_padding 0
 }
 
+exec --no-startup-id feh --bg-fill ~/.config/i3/kimi.jpg
 exec --no-startup-id fcitx
 exec --no-startup-id dropboxd
-exec --no-startup-id feh --bg-fill ~/.config/i3/kimi.jpg
-exec --no-startup-id terminator
-exec --no-startup-id firefox
-exec --no-startup-id emacs
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20
@@ -231,7 +228,11 @@ for_window [class=".*"] border pixel 5
 hide_edge_borders both
 gaps inner 10
 
-# exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/.i3/workspace-7.json'"
+# TODO three terminator windows ??????
+exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/.config/i3/workspace-3.json'"
 
-# gaps inner all set 20
-# gaps outer current plus 5
+# exec --no-startup-id terminator
+# exec --no-startup-id emacs
+# exec --no-startup-id konqueror
+
+# exec --no-startup-id firefox
