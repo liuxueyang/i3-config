@@ -193,10 +193,6 @@ bar {
     tray_padding 0
 }
 
-exec --no-startup-id feh --bg-fill ~/.config/i3/kimi.jpg
-exec --no-startup-id fcitx
-exec --no-startup-id dropboxd
-
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
@@ -212,9 +208,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # class 	      border	backgr.	   text	 	       indicator child_border
-client.focused	      #7F3A66	#ffe3c3	   #7f3a66	       #7e3a66	 #7e3a66
+client.focused	      #7F3A66	#ffe3c3	   #7f3a66	       #7e3a66	 #ff0000
 client.focused_inactive	#333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
 client.unfocused        #333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
+
+# client.focused	      #7F3A66	#ffe3c3	   #7f3a66	       #7e3a66	 #7e3a66
+# client.focused_inactive	#333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
+# client.unfocused        #333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
 
 #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
 # client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
@@ -224,12 +224,17 @@ client.unfocused        #333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
 # client.background       $black
 
 
-for_window [class=".*"] border pixel 5
+for_window [class=".*"] border pixel 3
 hide_edge_borders both
 gaps inner 10
 
+exec --no-startup-id compton -bc
+exec --no-startup-id feh --bg-fill ~/.config/i3/kimi.jpg
+exec --no-startup-id fcitx
+exec --no-startup-id dropboxd
+
 # TODO three terminator windows ??????
-exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/.config/i3/workspace-3.json'"
+exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/.config/i3/terminator-3.json'"
 
 # exec --no-startup-id terminator
 # exec --no-startup-id emacs
