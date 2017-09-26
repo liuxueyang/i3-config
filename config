@@ -182,8 +182,8 @@ bar {
     position top
     status_command i3status
     colors {
-       background #ffe3c3
-       statusline #7f3a66
+       background #081035
+       statusline #9482a8
     }
     # font pango:FontAwesome Bold 20
     font pango:MonofurForPowerline Nerd Font Bold 22
@@ -199,7 +199,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 # bindsym $mod+d  exec rofi -show run    -fg "#f1f1f1" -bg "#333333" -hlfg "#ffffff" -hlbg "#336699" -o 85
 # "MonofurForPowerline Nerd Font"
 # "FontAwesome Bold 25"
-bindsym $mod+d  exec rofi -show run -fg "#7f3a66" -bg "#ffe3c3" -hlfg "#ffffff" -hlbg "#336699" -o 85 -font "MonofurForPowerline Nerd Font 25"
+bindsym $mod+d  exec rofi -show run -fg "#9482a8" -bg "#081035" -hlfg "#ffffff" -hlbg "#336699" -o 85 -font "MonofurForPowerline Nerd Font 25"
 
 bindsym f8 exec rofi -show window -fg "#f1f1f1" -bg "#333333" -hlfg "#ffffff" -hlbg "#336699" -o 85
 
@@ -208,13 +208,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # class 	      border	backgr.	   text	 	       indicator child_border
-client.focused	      #7F3A66	#ffe3c3	   #7f3a66	       #7e3a66	 #ff0000
-client.focused_inactive	#333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
-client.unfocused        #333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
+client.focused	      #7F3A66	#081035	   #9482a8	       #7e3a66	 #d6cbdd
+client.focused_inactive	#333333	#081035	   #797fcb	       #484e50	 #081035
+client.unfocused        #333333	#081035	   #797fcb	       #484e50	 #081035
 
-# client.focused	      #7F3A66	#ffe3c3	   #7f3a66	       #7e3a66	 #7e3a66
-# client.focused_inactive	#333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
-# client.unfocused        #333333	#ffe3c3	   #797fcb	       #484e50	 #ffe3c3
+# client.focused	      #7F3A66	#081035	   #9482a8	       #7e3a66	 #7e3a66
+# client.focused_inactive	#333333	#081035	   #797fcb	       #484e50	 #081035
+# client.unfocused        #333333	#081035	   #797fcb	       #484e50	 #081035
 
 #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
 # client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
@@ -229,12 +229,14 @@ hide_edge_borders both
 gaps inner 10
 
 exec --no-startup-id compton -bc
-exec --no-startup-id feh --bg-fill ~/.config/i3/kimi.jpg
+exec --no-startup-id feh --bg-fill ~/.config/i3/silver_river.jpg
 exec --no-startup-id fcitx
 exec --no-startup-id dropboxd
+exec --no-startup-id nohup ss-local -c /home/repl/Documents/shadowsocks/unique.json > /tmp/nohup.out 2> /tmp/nohup.out.error &
+# exec --no-startup-id xfce4-panel
 
 # TODO three terminator windows ??????
-exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/.config/i3/terminator-3.json'"
+# exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/.config/i3/terminator-3.json'"
 
 # exec --no-startup-id terminator
 # exec --no-startup-id emacs
